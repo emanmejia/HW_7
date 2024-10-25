@@ -1,4 +1,6 @@
-// Country list
+// Country List
+// Emmanuel Mejia 
+
 const countryList = [
     "Afghanistan",
     "Albania",
