@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW7 - Q16</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="content"></div>
+
+<script>
+const questions = [
+    {
+        statement: "2+2?",
+        answer: "2+2 = 4"
+    },
+    {
+        statement: "In which year did Christopher Columbus discover America?",
+        answer: "1492"
+    },
+    {
+        statement: "What occurs twice in a lifetime, but once in every year, twice in a week but never in a day?",
+        answer: "The E letter"
+    }
+];
+
+const content = document.querySelector('#content');
+const dl = document.createElement('dl');
+
+for (const question of questions) {
+    const dt = document.createElement('dt');
+    const dd = document.createElement('dd');
+    
+    dt.innerText = question.statement;
+
+    const btn = document.createElement('button');
+    btn.innerText = "Show answer";
+    btn.onclick = function() {
+        // Replace the button with the answer
+        dd.innerText = question.answer;
+        dd.style.display = 'block'; // Show the answer
+        btn.style.display = 'none'; // Hide the button
+    };
+
+    dl.appendChild(dt);
+    dl.appendChild(btn);
+    dl.appendChild(dd);
+    console.log(dd);
+    dl.appendChild(document.createElement('br'));
+}
+
+content.appendChild(dl);
+</script>
+
+</body>
+</html>
